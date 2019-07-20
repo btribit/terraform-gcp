@@ -44,10 +44,10 @@ spec:
         container(name: 'kaniko', shell: '/busybox/sh') {
             sh '''#!/busybox/sh
             find .
-            set
             export VERSION=1.${BUILD_NUMBER}
+            set
             /kaniko/executor --context=dir://${WORKSPACE} --dockerfile=Dockerfile --cache=true \
-              --destination=tribitio/terraform-gcp:${BUILD_TAG} \
+              --destination=tribitio/terraform-gcp:${VERSION} \
               --destination=tribitio/terraform-gcp:latest
             '''
         }
