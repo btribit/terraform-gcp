@@ -46,8 +46,8 @@ spec:
             find .
             set
             /kaniko/executor --context=dir://${WORKSPACE} --dockerfile=Dockerfile --cache=true \
-              --destination=btribit/terraform-gcp:${BUILD_TAG} \
-              --destination=btribit/terraform-gcp:latest
+              --destination=tribitio/terraform-gcp:${BUILD_TAG} \
+              --destination=tribitio/terraform-gcp:latest
             '''
         }
       }
