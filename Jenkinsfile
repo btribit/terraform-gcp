@@ -45,6 +45,7 @@ spec:
             sh '''#!/busybox/sh
             find .
             set
+            export VERSION=1.${BUILD_NUMBER}
             /kaniko/executor --context=dir://${WORKSPACE} --dockerfile=Dockerfile --cache=true \
               --destination=tribitio/terraform-gcp:${BUILD_TAG} \
               --destination=tribitio/terraform-gcp:latest
